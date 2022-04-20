@@ -1,10 +1,16 @@
 
 const https = require('https');
 const fs = require('fs');
-
+const dotenv = require('dotenv');
+dotenv.config();
 var express = require('express');
 var app = express();
 app.use(express.static("\public"));
+
+if(!process.env.API_KEY){
+    console.log("Api key isn't set!");
+    process.exit();
+}
 
 let citiesData = {};
 function initCitiesData(){
@@ -17,7 +23,7 @@ function initCitiesData(){
 function getData(cityId){
     return new Promise((resolve,reject)=>{
         let cord = "lon="+citiesData.cities[cityId].lon+"&lat="+citiesData.cities[cityId].lat;
-        https.get('https://api.openweathermap.org/data/2.5/onecall?'+cord+'&exclude=current,minutely,hourly&appid=fdd2dbf35bbca64afc93103f1d8b5c0b&lang=tr&units=metric', (resp) => {
+        https.get('https://api.openweathermap.org/data/2.5/onecall?'+cord+`&exclude=current,minutely,hourly&appid=${process.env.API_KEY}&lang=tr&units=metric`, (resp) => {
         let data = '';
         resp.on('data', (chunk) => {
         data += chunk;
