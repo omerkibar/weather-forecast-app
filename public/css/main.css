@@ -1,0 +1,79 @@
+body{
+    background-color: #e9ecef;
+}
+.navbar{
+    margin: auto;
+    max-width: 1024px;
+}
+input{
+    margin-left: 10px;
+}
+li:hover{
+    border-bottom: 2px solid green;
+    margin-bottom: -2px;
+}
+.container{
+    max-width: 1024px;
+}
+.container-fluid{
+    margin-top: 40px;
+    max-width: 1024px;
+}
+
+.weather-icon{
+    width: 100px;
+}
+table{
+    border-radius: 7px;
+}
+table:hover{
+    cursor: pointer;
+    background-color: rgb(197, 197, 197)
+}
+td{
+    text-align: center;
+    font-size: 20px;
+}
+#extend{
+    text-align: center;
+    margin-top: 10px;
+}
+a{
+    cursor: pointer;
+}
+label:hover{
+    cursor:pointer;
+}
+.dropdown-toggle{
+    font-weight: 500;
+    font-size: 25px;
+}
+.dropdown-menu{
+    max-height: 280px;
+    overflow-y: auto;
+}
+.dropdown-item{
+    font-size: 25px;
+}
+.dropdown-item:hover{
+    background-color: rgb(206, 206, 206);
+    cursor:pointer;
+}
+.dropdown-container{
+    margin: auto;
+    margin-top: 40px;
+}
+.row-closed{
+    display: none;
+}
+.row-opened{
+    display:table-row;
+    background-color: #d7d6db;
+}
+.rain-drop-icon{
+    width: 50px;
+}
+
+footer{
+    margin-top: 29px;
+}
